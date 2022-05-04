@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Modal from '../Modal';
 
 const PhotoList = ({ category }) => {
-  const [currentPhoto, setCurrentPhoto] = useState();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentPhoto, setCurrentPhoto] = useState();
 
   const [photos] = useState([
     {
@@ -125,9 +125,9 @@ const PhotoList = ({ category }) => {
   const currentPhotos = photos.filter(photo => photo.category === category);
 
   const toggleModal = (image, i) => {
-  setCurrentPhoto({...image, index: i})
-  setIsModalOpen(true);
-  }
+    setCurrentPhoto({ ...image, index: i });
+    setIsModalOpen(!isModalOpen);
+  };
 
   return (
     <div>
